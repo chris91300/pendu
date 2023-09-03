@@ -1,0 +1,135 @@
+
+*{
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    
+    flex: 1;
+}
+
+html, body
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+
+a, a:visited
+{
+    text-decoration: none;
+}
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    
+}
+
+main:not([class="no-style"]){
+    /*margin-bottom: 3em;*/
+    margin: 3em 0;
+}
+
+
+.emoticon
+{
+    font-size: 1.4em;
+}
+
+
+.bold{
+    font-weight: bold;
+}
+
+
+
+
+/********************************************/
+/*            HEADER  & FOOTER              */
+/********************************************/
+
+
+
+header[class="portfolio"], footer[class="portfolio"]
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    font-size: 1.2em;
+    background-color: black;
+}
+
+
+header[class="portfolio"] {
+    justify-content: space-between;
+}
+
+
+footer[class="portfolio"]
+{
+    justify-content: center;
+   /* margin-top: 50px;*/
+}
+
+
+#logo[class="portfolio"]{
+    color: #59bdec;
+}
+
+
+nav[class="portfolio"]{
+    display: flex;
+    align-items: center;
+}
+
+
+nav[class="portfolio"] a, footer[class="portfolio"] a {
+    margin: 1em 0.5em;
+    color: #59bdec;
+}
+
+nav[class="portfolio"] a i{
+    color: #59bdec;
+}
+
+
+
+
+
+/********************************************/
+/*                ERROR 404                 */
+/********************************************/
+
+
+#error_404{
+    justify-content: center;
+    background-color: black;
+}
+
+
+#error_404 h1{
+    font-size: 4em;
+    color: wheat;
+}
+
+#error_404 p{
+    font-size: 2em;
+    color: wheat;
+}
+
+
+#error_404 a i {
+    font-size: 4em;
+    color: #59BDEC;
+}
