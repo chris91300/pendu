@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 
 import {WordToFind} from './wordToFind';
-import {Modal} from './modal';
 import TryToFindTheWord from "./TryToFindTheWord";
 import { toUpper, not } from "ramda";
 import GameOver from './GameOver'
-import replaceLettersByUnderscore from "../utils/replaceLettersByUnderscore";
+import GameContainer from './GameContainer'
 
 
 function LeJeuDuPendu() {
@@ -14,7 +13,6 @@ function LeJeuDuPendu() {
     const [gameIsFinished, setGameIsFinished] = useState(false);
     const [word, setWord] = useState("");
     const [modalStatus, setModalStatus] = useState("success");
-    //const [modalIsVisible, setModalIsVisible] = useState(false);
 
     const wordIsValid = word !== "";
   
@@ -41,18 +39,26 @@ function LeJeuDuPendu() {
    
 
     return (
-        <>
-        <div className="block block_row" id="app_container">
-            { ( not( gameIsStarted )  &&  not( wordIsValid ) )  &&  <WordToFind onValid={validWord}/> }
-            { ( gameIsStarted  &&  wordIsValid && not( gameIsFinished ))  &&  <TryToFindTheWord wordToFind={word} isOver={isOver} /> }    
-        </div>
+        <GameContainer>
+        
+            {
+                ( not( gameIsStarted )  &&  not( wordIsValid ) )
+                &&
+                <WordToFind onValid={validWord}/>
+            }
 
-        { ( gameIsStarted  &&  wordIsValid && gameIsFinished )  &&  <GameOver
-            status={modalStatus} 
-            word={word}
-            close={resetGame}
-        /> }
-        </>
+            {
+                ( gameIsStarted  &&  wordIsValid && not( gameIsFinished ))
+                && 
+                <TryToFindTheWord wordToFind={word} isOver={isOver} />
+            }   
+
+            {
+                ( gameIsStarted  &&  wordIsValid && gameIsFinished ) 
+                &&
+                <GameOver status={modalStatus} word={word} close={resetGame} />
+            } 
+        </GameContainer>
     )
 }
 

@@ -5,8 +5,8 @@
  * @param {Number} max fourchette haute non inclus
  * @returns 
  */
-export default function getRandomArbitrary(min, max) {
-  let number = Math.random() * (max - min) + min;
+export default function getRandomNumberBetween(min, max) {
+  const number = Math.random() * (max - min) + min;
   return parseInt(number);
   }
 

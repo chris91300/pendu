@@ -1,4 +1,4 @@
-import getRandomArbitrary from '../utils/getRandomArbitrary';
+import getRandomNumberBetween from './getRandomNumberBetween';
 
 import "../../../public/images/victoire1.jpg";
 import "../../../public/images/victoire2.jpg";
@@ -25,7 +25,7 @@ const pathImg = "/images/";
 
 const getDataForModalGame = (status) => {
     const picturesList = status === "victory"? imagesV : imagesF;
-    const number = parseInt(getRandomArbitrary(0, picturesList.length));
+    const number = parseInt(getRandomNumberBetween(0, picturesList.length));
     const img = pathImg + picturesList[number];
     const alt = status === "victory"? "image aléatoire symbolisant la victoire" : "image aléatoire symbolisant la défaite";
     const side = 100;
