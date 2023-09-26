@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import {WordToFind} from './wordToFind';
-import TryToFindTheWord from "./TryToFindTheWord";
+import {WordToFind} from '../WordToFind/wordToFind';
+import TryToFindTheWord from "../TryToFindTheWord/TryToFindTheWord";
 import { toUpper, not } from "ramda";
-import GameOver from './GameOver'
-import GameContainer from './GameContainer'
+import GameOver from '../GameOver/GameOver'
+import Container from '../container/Container';
 
 
 function LeJeuDuPendu() {
@@ -35,11 +35,10 @@ function LeJeuDuPendu() {
         setGameIsFinished(true);
     }
   
-
    
 
     return (
-        <GameContainer>
+        <Container id="app_container" className="block block_row">
         
             {
                 ( not( gameIsStarted )  &&  not( wordIsValid ) )
@@ -58,7 +57,7 @@ function LeJeuDuPendu() {
                 &&
                 <GameOver status={modalStatus} word={word} close={resetGame} />
             } 
-        </GameContainer>
+        </Container>
     )
 }
 

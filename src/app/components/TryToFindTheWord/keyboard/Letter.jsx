@@ -1,6 +1,6 @@
 "use client"
-import React, { useEffect, useState, useRef } from 'react';
-import useClickOnLetter from './hooks/useClickOnLetter'
+import React from 'react';
+import useClickOnLetter from '../../hooks/useClickOnLetter'
 import LetterButton from './LetterButton'
 /**
  * affiche la lettre correspondante à sa variable lettre

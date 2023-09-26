@@ -2,9 +2,9 @@
 "use client"
 
 import React from 'react'
-import useRandomWord from './hooks/useRandomWord'
-import getRandomWordFrom from './getRandomWordFrom'
-import Loading from './Loading'
+import useRandomWord from '../hooks/useRandomWord'
+import getRandomWordFrom from '../getRandomWordFrom'
+import Loading from '../Loading'
 
 
 /**

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import LeJeuDuPendu from './LeJeuDuPendu'
+import LeJeuDuPendu from './LeJeuDuPendu/LeJeuDuPendu'
 
 const styles = {
   app : {

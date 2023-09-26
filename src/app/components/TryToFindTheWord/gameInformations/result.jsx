@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Container from '../../container/Container';
 /**
  * partie du jeu où le mot à trouver apparaît modifier avec des " _ "
  * quand les lettres correspondante n'ont pas été trouvées
@@ -9,10 +9,10 @@ import React from 'react'
 const Result = ({ hiddenWord }) => {
 
     return (
-        <div className="block block_col block_grow">
+        <Container className="block block_col block_grow">
             <h2>Mot a trouvé</h2>
             <p className="wordHidden">{hiddenWord}</p>
-        </div>
+        </Container>
     )
   }
 

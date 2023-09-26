@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Container from '../../container/Container';
 
 /**
  * partie du jeu qui affiche le nombre d'erreur restant à l'utilisateur avant d'être pendu
@@ -11,10 +11,10 @@ const Try = ({tries}) => {
     let error = tries <= 1 ? "erreur" : "erreurs";    
 
     return (
-        <div className="block block_col block_grow">
+        <Container className="block block_col block_grow">
             <h2>ESSAIS</h2>
             <p>Vous avez droit à {tries} {error}</p>
-        </div>
+        </Container>
     )
 }
 

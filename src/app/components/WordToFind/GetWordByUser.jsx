@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from './Input';
+import Input from '../Input';
 
 function GetWordByUser({ word, handleChange, onFocus, handleClick, error }) {
   return (
