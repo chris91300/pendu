@@ -9,7 +9,6 @@ import Container from '../container/Container'
 import useAbstractDataForTryToFindTheWord from "./useAbstractDataForTryToFindTheWord";
 
 
-
 const TryToFindTheWord = ({ wordToFind, isOver }) => {
 
   const [
@@ -23,11 +22,10 @@ const TryToFindTheWord = ({ wordToFind, isOver }) => {
           totalLetter,
           hiddeModal
         ] = useAbstractDataForTryToFindTheWord(wordToFind, isOver)
-
-console.log("modalIsVisible : ", modalIsVisible)
-// MODIFIER MODAL VISIBLE / HIDDEN
+        
+        
   return (
-    <Container className="large block_col_to_row">
+    <Container className="flex items-center md:flex-col px-1 py-5 relative">
       <GameInformations tries={tries} wordHidden={wordHidden}/>      
 
       <Keyboard word={ word } clickOnLetter={ clickLetter } />

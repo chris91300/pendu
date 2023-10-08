@@ -14,7 +14,7 @@ export default function GameWon({word}){
     return (
         <Container className="col">
             <GameOverTitle>félicitations</GameOverTitle>            
-            <Image src={ img } alt={ alt } width={ side } height={ side }/>
+            <Image className="mx-auto" src={ img } alt={ alt } width={ side } height={ side }/>
             <GameOverText text="Vous avez trouvé le mot" word={word}/>
         </Container>
     )

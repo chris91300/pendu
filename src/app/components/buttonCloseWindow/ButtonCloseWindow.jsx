@@ -1,9 +1,13 @@
 import React from 'react'
+import Button from '../Button'
+
 
 function ButtonCloseWindow({ onClick }) {
-  return (
-    <button className="button_hide_modal" onClick={ onClick }>X</button>
-  )
+ 
+  return <Button
+          extendClassName="flex justify-center items-center w-6 h-6 rounded-full absolute top-1 right-1"
+          onClick={ onClick }
+          >X</Button>
 }
 
 export default ButtonCloseWindow

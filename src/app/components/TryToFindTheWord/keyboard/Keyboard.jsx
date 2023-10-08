@@ -1,18 +1,21 @@
 import React from 'react'
 import { map } from 'ramda';
 import letterBuilder from './letterBuilder'
-import alphabet from '../../../utils/alphabet';
+import { a_m, n_z } from '@/app/utils/alphabet';
 import Container from '../../container/Container';
 
 function Keyboard({ word, clickOnLetter }) {
   
     const getLetterComponent = letterBuilder(word, clickOnLetter)
-    const Keys = map( getLetterComponent, alphabet )
+    const KeysAtoM = map( getLetterComponent, a_m )
+    const KeysNtoZ = map( getLetterComponent, n_z )
 
+    
   return (
-    <Container className="block block_row block_row--wrap">
-        { Keys }
-    </Container>
+    <>
+      <Container className="flex flex-col order-first md:order-none md:flex-row md:flex-wrap md:w-[650px] lg:w-[850px]">{ KeysAtoM} </Container>
+      <Container className="flex flex-col md:flex-row md:flex-wrap md:w-[650px] lg:w-[850px]">{ KeysNtoZ} </Container>
+    </>
   )
 }
 

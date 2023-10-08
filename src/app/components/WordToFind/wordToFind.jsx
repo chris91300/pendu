@@ -25,7 +25,7 @@ export function WordToFind({onValid}){
 
 
     return (
-        <Container className="block block_col block_grow">
+        <Container className="flex flex-col items-center w-full py-5">
             <GetWordByUser
                 word={ word }
                 handleChange={ handleChange }

@@ -5,6 +5,7 @@ import React from 'react'
 import useRandomWord from '../hooks/useRandomWord'
 import getRandomWordFrom from '../getRandomWordFrom'
 import Loading from '../Loading'
+import Button from '../Button'
 
 
 /**
@@ -23,7 +24,7 @@ export default function RandomWord ({onClick}) {
 
 
     return loading ?
-            <button onClick={ getRandomWord }>obtenir un mot aléatoirement</button>
+            <Button onClick={ getRandomWord }>obtenir un mot aléatoirement</Button>
             : 
             <Loading />
         

@@ -2,7 +2,7 @@ import React from 'react';
 import ModalErrorImage from './ModalErrorImage' 
 import ModalErrorText from './ModalErrorText'
 import ModalErrorLastTry from './ModalErrorLastTry'
-import ModalErrorContainer from './ModalErrorContainer'
+import Container from '../../container/Container';
 
 import "../../../../../public/images/error/error_9_tries_left.jpg";
 import "../../../../../public/images/error/error_8_tries_left.jpg";
@@ -19,13 +19,13 @@ import "../../../../../public/images/error/error_1_tries_left.jpg";
 export default function ModalError({letter, tries}){
     
     const imagePath = `/images/error/error_${tries}_tries_left.jpg`;
-    const imageSide = 300;
+    const imageSide = 250;
     
     return (
-        <ModalErrorContainer>
+        <Container className="flex flex-col">
             <ModalErrorImage src={ imagePath } imageSide={ imageSide } />
             <ModalErrorText letter={letter} />
             <ModalErrorLastTry tries={tries} />
-        </ModalErrorContainer>
+        </Container>
     )
 }

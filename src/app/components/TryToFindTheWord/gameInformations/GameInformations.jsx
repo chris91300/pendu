@@ -5,8 +5,9 @@ import Result from './result';
 
 
 function GameInformations({ tries, wordHidden }) {
+  
   return (
-    <Container className="block block_col block_grow">
+    <Container className="flex flex-col grow items-center">
       <Try tries={tries}/>      
       <Result hiddenWord={wordHidden}/>
     </Container>

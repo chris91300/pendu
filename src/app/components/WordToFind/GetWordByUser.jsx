@@ -1,5 +1,6 @@
 import React from 'react'
 import Input from '../Input';
+import Button from '../Button';
 
 function GetWordByUser({ word, handleChange, onFocus, handleClick, error }) {
   return (
@@ -13,7 +14,7 @@ function GetWordByUser({ word, handleChange, onFocus, handleClick, error }) {
         onFocus={onFocus}
         error={error}
     />
-    <button onClick={handleClick}>valider</button>
+    <Button extendClassName='block' onClick={handleClick}>valider</Button>
     </>
   )
 }

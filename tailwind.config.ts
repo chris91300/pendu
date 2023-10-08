@@ -9,10 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+          'cimetery': "url('/images/background/cimetery_1.jpg')"
       },
+      fontFamily: {
+        'bloody' : ["bloody"],
+        'curse_zombie' : ["curse_zombie"],
+        'satan' : ["satan"],
+        'zombie_reborn' : ["zombie_reborn"]
+      }
     },
   },
   plugins: [],

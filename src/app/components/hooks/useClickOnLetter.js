@@ -4,18 +4,18 @@ import { includes, __ , not } from 'ramda'
 
 
 const useClickOnLetter = (lettre, word, onClickLetter)=>{
-  const [css, setCSS] = useState("black");
-  const [ used, setUsed ] = useState(false);
-  const disabled = used ? 'disabled': null;
+  const [css, setCSS] = useState("[wheat]");
+  const [ letterAlreadyUsed, setLetterAlreadyUsed ] = useState(false);
+  const disabled = letterAlreadyUsed ? 'disabled': null;
   const isItInWordToFind = includes(__, word);
 
 
   const onClick = () => {
-    if ( not(used) ){  
+    if ( not(letterAlreadyUsed) ){  
 
       const color = isItInWordToFind( lettre )? 'green' : 'red';
       setCSS(color)
-      setUsed(true)
+      setLetterAlreadyUsed(true)
       onClickLetter(lettre);
 
     }

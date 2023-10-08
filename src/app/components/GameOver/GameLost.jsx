@@ -7,10 +7,10 @@ import Container from '../container/Container';
 
 export default function GameLost({word}){
     
-    const { img, alt, side } = getDataForModalGame("fail");
-    
+    const { img, alt, side } = getDataForModalGame("fail");    
+   
     return (
-        <Container className="col">
+        <Container className="flex flex-col justify-center items-center">
             <GameOverTitle>Vous avez été pendu</GameOverTitle> 
             <Image src={ img } alt={ alt }  width={ side } height={ side }/>
             <GameOverText text="vous avez perdu. le mot à trouver était" word={word}/>

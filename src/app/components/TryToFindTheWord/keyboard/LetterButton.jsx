@@ -1,12 +1,20 @@
 
 import React from 'react'
+import Button from '../../Button';
+import getColorText from './getColorText'
+import getColorBorder from './getColorBorder'
 
 function LetterButton({ color, onClick, disabled, children }) {
-  const className = `lettre lettre--${color}`;
+
+  const textColor = getColorText(color)
+  const borderColor = getColorBorder(color)
+ 
+  const className = `flex justify-center items-center shrink text-sm w-7 h-7 font-bold mx-2 ${textColor} ${borderColor} md:w-9 md:h-9 md:text-md lg:w-12 lg:h-12 lg:text-xl `;
+
   return (
-    <button className={className} onClick={onClick} disabled={disabled} >
+    <Button extendClassName={ className } onClick={onClick} disabled={disabled} >
       {children}
-    </button>
+    </Button>
   )
 }
 

@@ -16,11 +16,13 @@ function useRandomWord() {
         
     }, []);
 
+
     useEffect(()=>{
         asyncGetLIstOfWords();
     
     }, [asyncGetLIstOfWords])
 
+    
     return [ list, loading ]
 }
 

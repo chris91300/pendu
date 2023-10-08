@@ -5,12 +5,8 @@ import Image from 'next/image';
 
 function ModalErrorImage({ src, imageSide }) {
 
-   
-    
-
-
   return (
-    <Image src={ src } alt="dessin du pendu"  width={ imageSide } height={ imageSide } />
+    <Image className='mx-auto mb-3' src={ src } alt="dessin du pendu"  width={ imageSide } height={ imageSide } />
   )
 }
 

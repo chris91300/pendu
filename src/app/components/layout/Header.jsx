@@ -1,21 +1,15 @@
-import Image from 'next/image'
+
 import React from 'react'
 import Logo from './Logo'
 import Link from 'next/link'
 
 function Header() {
 
-  const headerStyle= {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "20px",
-    backgroundColor: "rgba(0,0,0,0.7)"
-  }
+ 
   return (
-    <header style={ headerStyle }>
+    <header className='flex items-center justify-between p-5 bg-black bg-opacity-70'>
         <Logo />
-        <Link href="/">portfolio</Link>
+        <Link className='font-bloody text-lg text-red-600' href="/">portfolio</Link>
     </header>
   )
 }

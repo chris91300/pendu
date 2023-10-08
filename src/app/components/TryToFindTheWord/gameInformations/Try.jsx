@@ -11,9 +11,9 @@ const Try = ({tries}) => {
     let error = tries <= 1 ? "erreur" : "erreurs";    
 
     return (
-        <Container className="block block_col block_grow">
-            <h2>ESSAIS</h2>
-            <p>Vous avez droit à {tries} {error}</p>
+        <Container className="flex flex-col items-center">
+            <h2 className='text-[wheat] font-bold'>ESSAIS</h2>
+            <p className='text-[wheat]'>Vous avez droit à {tries} {error}</p>
         </Container>
     )
 }
