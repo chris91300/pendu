@@ -1,6 +1,7 @@
 import {useState} from 'react';
-import onlyLetters from '../../utils/onlyLetters'
-import notEmpty from '../../utils/notEmpty'
+import onlyLetters from '../../../utils/onlyLetters'
+import notEmpty from '../../../utils/notEmpty'
+import replaceVoyelleWithAccent from '../utils/replace'
 
 function useAbstractDataForWordToFind(callbackFromParent) {
     const [word, setWord] = useState("");
@@ -16,7 +17,8 @@ function useAbstractDataForWordToFind(callbackFromParent) {
         {
             if(onlyLetters(word))
             {
-                callbackFromParent(word);
+                const wordWithoutAccent = replaceVoyelleWithAccent(word)
+                callbackFromParent(wordWithoutAccent);
             }
             else {
                 setError(true);

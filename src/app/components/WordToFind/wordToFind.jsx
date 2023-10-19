@@ -4,7 +4,7 @@ import React from 'react';
 import GetWordByUser from './GetWordByUser'
 import RandomWord from './RandomWord';
 import Container from '../container/Container';
-import useAbstractDataForWordToFind from './useAbstractDataForWordToFind'
+import useAbstractDataForWordToFind from './hooks/useAbstractDataForWordToFind'
 /**
  * la partie ou un joueur peut soit entrer le mot à deviner, soit demander un mot aléatoire
  * 

@@ -4,6 +4,7 @@ import React from "react";
 import LeJeuDuPendu from './LeJeuDuPendu/LeJeuDuPendu'
 
 
+
 /**
  * LA PAGE FAIT W:1530PX H:759 PX SUR MON ORDI
  * RETRAVAILLER L'IMAGE BG POUR QU'ELLE SOIT PLUS BELLE

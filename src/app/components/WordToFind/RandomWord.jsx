@@ -2,10 +2,11 @@
 "use client"
 
 import React from 'react'
-import useRandomWord from '../hooks/useRandomWord'
-import getRandomWordFrom from '../getRandomWordFrom'
+import { not } from 'ramda'
+import useGetRandomWord from './hooks/useGetRandomWord'
 import Loading from '../Loading'
 import Button from '../Button'
+import ErrorApi from './ErrorApi'
 
 
 /**
@@ -15,17 +16,18 @@ import Button from '../Button'
  */
 export default function RandomWord ({onClick}) {
 
-    const [ list, loading ] = useRandomWord()
-    
-    const getRandomWord = () => {
-        const word = getRandomWordFrom(list)
-        onClick(word);
-    }
+    const [ getRandomWord, loading, error ] = useGetRandomWord(onClick)
 
 
-    return loading ?
-            <Button onClick={ getRandomWord }>obtenir un mot aléatoirement</Button>
-            : 
-            <Loading />
+
+    return (
+        <>
+        { error &&  <ErrorApi /> }
+        { (not(error) & loading ) && <Loading /> }
+        { (not(error) & not(loading) ) && <Button onClick={ getRandomWord }>obtenir un mot aléatoirement</Button> }
+        </> 
+        
+    )
+            
         
 }

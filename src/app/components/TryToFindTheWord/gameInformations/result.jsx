@@ -13,9 +13,9 @@ const Result = ({ hiddenWord }) => {
     const hiddenWordComponents = getHiddenWordComponents(hiddenWord)
     
     return (
-        <Container className="flex flex-col grow mt-5">
+        <Container className="flex flex-col items-center grow mt-5">
             <h2 className='text-[wheat] font-bold'>Mot a trouvé</h2>
-            <p className='text-[wheat] text-center'>{hiddenWordComponents}</p>
+            <p className='text-[wheat]'>{hiddenWordComponents}</p>
         </Container>
     )
   }
