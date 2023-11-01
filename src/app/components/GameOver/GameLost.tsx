@@ -16,7 +16,7 @@ export default function GameLost({word}: GameLostPropsType){
     return (
         <Container className="flex flex-col justify-center items-center">
             <GameOverTitle>Vous avez été pendu</GameOverTitle> 
-            <Image src={ img } alt={ alt }  width={ side } height={ side }/>
+            <Image className="my-3"  src={ img } alt={ alt }  width={ side } height={ side }/>
             <GameOverText text="vous avez perdu. le mot à trouver était" word={word}/>
         </Container>
     )

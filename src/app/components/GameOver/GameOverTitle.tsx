@@ -9,7 +9,7 @@ type GameOverTitlePropsType = {
 function GameOverTitle({ children }: GameOverTitlePropsType) {
 
   return (
-    <h2 className='text-black text-4xl uppercase'>{ children }</h2>
+    <h2 className='text-center text-black text-4xl uppercase'>{ children }</h2>
   )
 }
 

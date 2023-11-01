@@ -8,7 +8,7 @@ type GameOverTextPropsType = {
 
 function GameOverText({ text, word }: GameOverTextPropsType) {
   return (
-    <p className='text-black'>
+    <p className='text-center text-black'>
       { text } <span className="font-bold uppercase">{ word }</span>
     </p>
   )

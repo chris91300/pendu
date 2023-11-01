@@ -12,9 +12,9 @@ export default function GameWon({word}: { word: string}){
     
     
     return (
-        <Container className="col">
+        <Container className="flex flex-col justify-center items-center">
             <GameOverTitle>félicitations</GameOverTitle>            
-            <Image className="mx-auto" src={ img } alt={ alt } width={ side } height={ side }/>
+            <Image className="my-3" src={ img } alt={ alt } width={ side } height={ side }/>
             <GameOverText text="Vous avez trouvé le mot" word={word}/>
         </Container>
     )

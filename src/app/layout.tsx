@@ -13,7 +13,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
 
   return (
     <html lang="fr">
-      <body className="font-sans bg-cimetery bg-no-repeat bg-center bg-cover">
+      <body className="font-sans min-h-screen bg-cimetery bg-no-repeat bg-center bg-cover">
         <Header />
         { children }
       </body>

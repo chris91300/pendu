@@ -14,8 +14,8 @@ const getDataForModalGame = (status:string): DataForModalGame => {
     const doesUserWin = isVictory(status)
     const img = getPicturesListOfVictoryOrFail(doesUserWin)
     const alt = getAltTextPictureOfVictoryOrFail(doesUserWin)
-    const side = 100;
-
+    const side = 300;
+    
     return  {img, alt, side }
 }
 

@@ -18,8 +18,8 @@ function GameOver({ status, word, close }: GameOverPropsType) {
     const userWin = isVictory(status)
     const content = userWin ? <GameWon word={word} /> : <GameLost word={word} />
     const bgColor = userWin ? 'bg-green-500' : 'bg-red-400'
-    const classNameMainContainer = `w-full h-full flex justify-center ${bgColor}`
-    const classNameContainer = `relative flex flex-col justify-center items-center w-full p-3`;
+    const classNameMainContainer = `w-full h-[450px] flex justify-center`
+    const classNameContainer = `relative flex flex-col justify-center items-center w-full md:w-[600px] lg:w-[800px] p-3 ${bgColor}`;
     
   return (
     <Container className={classNameMainContainer}>
