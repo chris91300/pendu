@@ -1,4 +1,4 @@
-import { JsxElement } from "typescript"
+
 import Letter from "./Letter"
 
 type LetterBuilderReturn = (letter: string) => JSX.Element

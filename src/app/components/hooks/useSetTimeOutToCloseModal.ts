@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 
-//  VOIR COMMENT ON GÈRE SETTIMEOUT
 
 const useSetTimeOutToCloseModal = (callback: ()=>void, time: number, watcher: string[]) => {
 

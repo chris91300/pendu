@@ -6,7 +6,6 @@ import LetterButton from './LetterButton'
 
 
 type LetterProps = {
-  key: string,
   lettre: string,
   word: string,
   onClickLetter: (letter: string) => void
@@ -17,11 +16,11 @@ type LetterProps = {
  * @param {Object} props
  * @returns 
  */
-const Letter = ({ key, lettre, word, onClickLetter }: LetterProps): JSX.Element => { 
+const Letter = ({ lettre, word, onClickLetter }: LetterProps): JSX.Element => { 
 
 const [ css, onClick, used ] = useClickOnLetter(lettre, word, onClickLetter)
 
-  return <LetterButton key={key} color={ css } onClick={ onClick } disabled={ used } >
+  return <LetterButton color={ css } onClick={ onClick } disabled={ used } >
             {lettre}
           </LetterButton>
 }

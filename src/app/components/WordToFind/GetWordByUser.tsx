@@ -2,7 +2,15 @@ import React from 'react'
 import Input from '../Input';
 import Button from '../Button';
 
-function GetWordByUser({ word, handleChange, onFocus, handleClick, error }) {
+type GetWordByUserProps = {
+  word: string,
+  handleChange: (val: string) => void,
+  onFocus: () => void,
+  handleClick: () => void,
+  error: boolean
+}
+
+function GetWordByUser({ word, handleChange, onFocus, handleClick, error }: GetWordByUserProps) {
   return (
     <>
     <Input 

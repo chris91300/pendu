@@ -26,8 +26,7 @@ type WordToFindProps = {
  * @returns les différents components
  */
 export function WordToFind({onValid}: WordToFindProps){
-//  TROUVER POURQUOI TYPESCRIPT ME RAJOUTE DES 
-// j'ai trouver. il faut ajouter un retour à la fonction useAbstract...
+
     const [
         word,
         error,

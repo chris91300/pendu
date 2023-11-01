@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import replaceVoyelleWithAccent from '../utils/replace'
 import getRandomWordFromExternalAPI from '../utils/getRandomWordFromExternalAPI'
 import getRandomWordFromAPI from '../utils/getRandomWordFromAPI'
+import { pipe } from 'ramda/es/index'
 
     
 type GetRandomWordTypes = [
@@ -19,17 +20,17 @@ export default function useGetRandomWord(fc: (word: string)=> void): GetRandomWo
     const startLoading = ()=>setLoading(true)
     const stopLoading = ()=>setLoading(false)
 
-   const getWordFromExternalApi = async () => {
-        const word = await getRandomWordFromExternalAPI()
-        const wordWithoutAccent = replaceVoyelleWithAccent(word)
-        fc(wordWithoutAccent)
-   }
+    const formatWordAndsetIt = pipe(replaceVoyelleWithAccent, fc)
 
-   const getWordFromInternalApi = async ()=> {
-    const word = await getRandomWordFromAPI()
-    const wordWithoutAccent = replaceVoyelleWithAccent(word)
-    fc(wordWithoutAccent)
-   }
+    const getWordFromExternalApi = async () => {
+        const word = await getRandomWordFromExternalAPI()
+        formatWordAndsetIt(word)
+    }
+
+    const getWordFromInternalApi = async ()=> {
+        const word = await getRandomWordFromAPI()
+        formatWordAndsetIt(word)
+    }
     
    
     const getRandomWord = () => {

@@ -15,6 +15,7 @@ function getColorBorder( color: "red" | "green" | "[wheat]" ) {
             break;
         
         default:
+            style = 'border-[wheat]';
             
     }
 

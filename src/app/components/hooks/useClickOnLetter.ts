@@ -12,17 +12,20 @@ type useClickOnLetterReturn = [
 
 type useClickOnLetterType = (letter: string, word: string, onClickLetter: (letter: string) => void) => useClickOnLetterReturn
 
+
+
 const useClickOnLetter: useClickOnLetterType = (letter, word, onClickLetter) => {
+
   const [css, setCSS] = useState<cssLetterColor>("[wheat]");
   const [ letterAlreadyUsed, setLetterAlreadyUsed ] = useState(false);
-  const disabled = letterAlreadyUsed ? true: false;
+  const disabled = letterAlreadyUsed;
   const isItInWordToFind = includes(__, word);
 
 
   const onClick = () => {
     if ( not(letterAlreadyUsed) ){  
 
-      const color = isItInWordToFind( letter )? 'green' : 'red';
+      const color = isItInWordToFind( letter ) ? 'green' : 'red';
       setCSS(color)
       setLetterAlreadyUsed(true)
       onClickLetter(letter);

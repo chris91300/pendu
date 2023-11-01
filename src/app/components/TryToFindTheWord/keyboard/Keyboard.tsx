@@ -2,7 +2,8 @@ import React from 'react'
 import { map } from 'ramda';
 import letterBuilder from './letterBuilder'
 import { a_m, n_z } from '@/app/utils/alphabet';
-import Container from '../../container/Container';
+import KeyboardAToM from './KeyboardAToM';
+import KeyboardNToZ from './KeyboardNToZ';
 
 
 type KeyboardProps = {
@@ -19,8 +20,13 @@ function Keyboard({ word, clickOnLetter }: KeyboardProps) {
     
   return (
     <>
-      <Container className="flex flex-col order-first md:order-none md:flex-row md:flex-wrap md:w-[650px] lg:w-[850px]">{ KeysAtoM} </Container>
-      <Container className="flex flex-col md:flex-row md:flex-wrap md:w-[650px] lg:w-[850px]">{ KeysNtoZ} </Container>
+    <KeyboardAToM>
+      { KeysAtoM }
+    </KeyboardAToM>
+
+    <KeyboardNToZ>
+      { KeysNtoZ }
+    </KeyboardNToZ>
     </>
   )
 }

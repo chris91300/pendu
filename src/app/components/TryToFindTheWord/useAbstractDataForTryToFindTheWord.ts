@@ -4,20 +4,22 @@ import getUpperCaseArrayFrom from '../../utils/getUpperCaseArrayFrom'
 import replaceLettersByUnderscore from "../../utils/replaceLettersByUnderscore";
 import isItTheLastTry from '../../utils/isItTheLastTry'
 
+type ModalStatus = "success" | "error"
+type GameStatus = "victory" | "fail"
 
 type ReturnTypes = [
   number,
   string,
   string,
   (lettre: string) => void,
-  "success" | "error",
+  ModalStatus,
   boolean,
   string,
   number,
   ()=>void
 ]
 
-function useAbstractDataForTryToFindTheWord(wordToFind: string, isOver: (text: "victory" | "fail")=>void): ReturnTypes {
+function useAbstractDataForTryToFindTheWord(wordToFind: string, isOver: (text: GameStatus)=>void): ReturnTypes {
     const wordToFindWithUnderscore = replaceLettersByUnderscore(wordToFind)
     const word = getUpperCaseArrayFrom(wordToFind);
     const [tries, setTries] = useState(10);
@@ -25,7 +27,7 @@ function useAbstractDataForTryToFindTheWord(wordToFind: string, isOver: (text: "
     const [ wordHiddenSplit, setWordHiddenSplit ] = useState(wordHidden.split(""))
     const [letter, setLetter] = useState("");
     const [totalLetter, setTotalLetter] = useState(0);
-    const [modalStatus, setModalStatus] = useState<"success" | "error">("success");
+    const [modalStatus, setModalStatus] = useState<ModalStatus>("success");
     const [modalIsVisible, setModalIsVisible] = useState(false);
   
     const playerWon = () => isOver("victory");
