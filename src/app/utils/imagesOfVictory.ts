@@ -1,4 +1,4 @@
-import "../../../public/images/victoire1.jpg";
+/*import "../../../public/images/victoire1.jpg";
 import "../../../public/images/victoire2.jpg";
 import "../../../public/images/victoire3.jpg";
 import "../../../public/images/victoire4.jpg";
@@ -7,7 +7,7 @@ import "../../../public/images/victoire6.jpg";
 import "../../../public/images/victoire7.jpg";
 import "../../../public/images/victoire8.jpg";
 import "../../../public/images/victoire9.jpg";
-import "../../../public/images/victoire10.jpg";
+import "../../../public/images/victoire10.jpg";*/
 
 function imagesOfVictory(): string[] {
 

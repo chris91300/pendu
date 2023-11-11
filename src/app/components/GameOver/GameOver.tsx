@@ -4,7 +4,7 @@ import GameLost from './GameLost'
 import Container from '../container/Container';
 import ButtonCloseWindow from '../buttonCloseWindow/ButtonCloseWindow';
 import Button from '../Button';
-import { isVictory } from '@/app/utils/isVictory';
+import { isVictory } from '../../utils/isVictory';
 
 
 type GameOverPropsType = {

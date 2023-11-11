@@ -1,4 +1,5 @@
-import { equals } from 'ramda/es/index';
+//import { equals } from 'ramda/es/index';
+import { equals } from 'ramda'
 import React from 'react'
 
 

@@ -12,6 +12,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+
+    //  ajout de types pour les problèmes avec .toBeInTheDocument()
+    "types": ["@testing-library/jest-dom"],
     "incremental": true,
     "plugins": [
       {
@@ -22,6 +25,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/WordToFind/GetWordByUser.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/WordToFind/GetWordByUser.tsx", "src/app/components/App.test.tsx", "src/app/components/WordToFind/__tests__/ErrorApi.test.tsx"],
   "exclude": ["node_modules"]
 }

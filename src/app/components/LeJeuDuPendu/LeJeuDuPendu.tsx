@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import useAbstractDataForGame from './useAbstractDataForGame'
-import {WordToFind} from '../WordToFind/wordToFind';
+import WordToFind from '../WordToFind/WordToFind';
 import TryToFindTheWord from "../TryToFindTheWord/TryToFindTheWord";
 import { not } from "ramda";
 import GameOver from '../GameOver/GameOver'

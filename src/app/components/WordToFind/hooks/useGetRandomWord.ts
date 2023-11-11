@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 import replaceVoyelleWithAccent from '../utils/replace'
 import getRandomWordFromExternalAPI from '../utils/getRandomWordFromExternalAPI'
 import getRandomWordFromAPI from '../utils/getRandomWordFromAPI'
-import { pipe } from 'ramda/es/index'
-
+//import { pipe } from 'ramda/es/index'
+import { pipe } from 'ramda'
     
 type GetRandomWordTypes = [
     () => void,

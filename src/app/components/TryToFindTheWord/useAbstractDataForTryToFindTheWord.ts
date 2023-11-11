@@ -10,7 +10,7 @@ type GameStatus = "victory" | "fail"
 type ReturnTypes = [
   number,
   string,
-  string,
+  string[],
   (lettre: string) => void,
   ModalStatus,
   boolean,

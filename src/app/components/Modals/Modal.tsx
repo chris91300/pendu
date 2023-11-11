@@ -20,7 +20,7 @@ type ModalProps = {
 }
 
 
-export function Modal({status, letter, totalLetter, tries, hiddeModal}: ModalProps) {
+function Modal({status, letter, totalLetter, tries, hiddeModal}: ModalProps) {
 
     const doesUserFoundGoodLetter = isSuccess(status);
     const bgColor = doesUserFoundGoodLetter ? 'bg-green-500' : 'bg-red-400'
@@ -42,3 +42,5 @@ export function Modal({status, letter, totalLetter, tries, hiddeModal}: ModalPro
     );
 
 }
+
+export  default Modal

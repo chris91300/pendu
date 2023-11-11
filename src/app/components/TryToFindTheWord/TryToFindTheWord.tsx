@@ -3,7 +3,7 @@
 
 import React from "react";
 import GameInformations from './gameInformations/GameInformations'
-import {Modal} from '../Modals/modal'; 
+import Modal from '../Modals/Modal'; 
 import Keyboard from './keyboard/Keyboard'
 import Container from '../container/Container'
 import useAbstractDataForTryToFindTheWord from "./useAbstractDataForTryToFindTheWord";

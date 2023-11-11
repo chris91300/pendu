@@ -1,13 +1,13 @@
 import React from 'react'
 import { map } from 'ramda';
 import letterBuilder from './letterBuilder'
-import { a_m, n_z } from '@/app/utils/alphabet';
+import { a_m, n_z } from '../../../utils/alphabet';
 import KeyboardAToM from './KeyboardAToM';
 import KeyboardNToZ from './KeyboardNToZ';
 
 
 type KeyboardProps = {
-  word: string,
+  word: string[],
   clickOnLetter: (letter: string) => void
 }
 

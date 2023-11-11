@@ -1,9 +1,9 @@
-
+/*
 import "../../../public/images/pendu2.jpg";
 import "../../../public/images/pendu3.jpg";
 import "../../../public/images/pendu4.jpg";
 import "../../../public/images/pendu5.jpg";
-import "../../../public/images/pendu6.jpg";
+import "../../../public/images/pendu6.jpg";*/
 
 
 

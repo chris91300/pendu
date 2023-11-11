@@ -7,7 +7,7 @@ import Container from '../container/Container';
 import useAbstractDataForWordToFind from './hooks/useAbstractDataForWordToFind';
 
 
-type Test = [
+type AbstractDataType = [
     string,
     boolean,
     (val: string) => void,
@@ -25,7 +25,7 @@ type WordToFindProps = {
  * @param {function} onValid callback qui retourne la valeur de l'input au clic sur valider
  * @returns les différents components
  */
-export function WordToFind({onValid}: WordToFindProps){
+export default function WordToFind({onValid}: WordToFindProps){
 
     const [
         word,
@@ -34,7 +34,7 @@ export function WordToFind({onValid}: WordToFindProps){
         onFocus,
         handleClick,
         getRandomWord
-        ]: Test = useAbstractDataForWordToFind(onValid);
+        ]: AbstractDataType = useAbstractDataForWordToFind(onValid);
 
 
 

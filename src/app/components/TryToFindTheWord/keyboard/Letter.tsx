@@ -7,7 +7,7 @@ import LetterButton from './LetterButton'
 
 type LetterProps = {
   lettre: string,
-  word: string,
+  word: string[],
   onClickLetter: (letter: string) => void
 }
 

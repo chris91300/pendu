@@ -10,7 +10,7 @@ type useClickOnLetterReturn = [
   boolean
 ]
 
-type useClickOnLetterType = (letter: string, word: string, onClickLetter: (letter: string) => void) => useClickOnLetterReturn
+type useClickOnLetterType = (letter: string, word: string[], onClickLetter: (letter: string) => void) => useClickOnLetterReturn
 
 
 
