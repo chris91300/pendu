@@ -2,24 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: "bloody";
-  src: url("./font/BLOODY.ttf") format('truetype');
+  src: url("/font/BLOODY.ttf") format('truetype');
 }
 
 @font-face {
   font-family: "curse_zombie";
-  src: url("./font/Curse_of_the_Zombie.ttf") format('truetype');
+  src: url("/font/Curse_of_the_Zombie.ttf") format('truetype');
 }
 
 @font-face {
   font-family: "satan";
-  src: url("./font/who_asks_satan.ttf") format('truetype');
+  src: url("/font/who_asks_satan.ttf") format('truetype');
 }
 
 @font-face {
   font-family: "zombie_reborn";
-  src: url("./font/ZOMBIES_REBORN.ttf") format('truetype');
+  src: url("/font/ZOMBIES_REBORN.ttf") format('truetype');
 }
 
 

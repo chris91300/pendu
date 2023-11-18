@@ -1,32 +1,15 @@
-import React, { useRef, useState } from 'react'
-import useAbstractDataForGame from './useAbstractDataForGame'
-import WordToFind from '../WordToFind/WordToFind';
-import TryToFindTheWord from "../TryToFindTheWord/TryToFindTheWord";
+import React from 'react';
+import useDataForGame from './hooks/useDataForGame';
+import WordToFind from './WordToFind/WordToFind';
+import TryToFindTheWord from "./TryToFindTheWord/TryToFindTheWord";
 import { not } from "ramda";
-import GameOver from '../GameOver/GameOver'
-import { ForwardContainer } from '../container/Container';
+import GameOver from './GameOver/GameOver';
+import { ForwardContainer } from '../globals/container/Container';
 
-interface RefObject<T> {
-    readonly current: T;
-  }
-  
-type StatusType = "victory" | "fail"
 
-type DataForGameTypes = [
-    RefObject<HTMLDivElement>,
-    boolean,
-    boolean,
-    string,
-    boolean,
-    StatusType,
-    (word: string) => void,
-    (status: StatusType) => void,
-    () => void
-]
+export default function LeJeuDuPendu() {
 
-function LeJeuDuPendu() {
-
-    const [
+    const {
         mainContainer,
         gameIsStarted,
         wordIsValid,
@@ -35,7 +18,7 @@ function LeJeuDuPendu() {
         gameOverStatus,
         validWord,
         isOver,
-        resetGame ]: DataForGameTypes = useAbstractDataForGame()
+        resetGame } = useDataForGame()
 
 
     return (
@@ -61,5 +44,3 @@ function LeJeuDuPendu() {
         </ForwardContainer>
     )
 }
-
-export default LeJeuDuPendu

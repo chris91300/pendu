@@ -1,6 +1,31 @@
 import { screen } from '@testing-library/react'
 import { curry } from 'ramda'
 
+//  APPLICATION START
+        //  TEST OPTIONS
+        /**
+         *  hidden?: boolean = false,
+            name?: TextMatch,
+            description?: TextMatch,
+            selected?: boolean,
+            busy?: boolean,
+            checked?: boolean,
+            pressed?: boolean,
+            suggest?: boolean,
+            current?: boolean | string,
+            expanded?: boolean,
+            queryFallbacks?: boolean,
+            level?: number,
+            value?: {
+            min?: number,
+            max?: number,
+            now?: number,
+            text?: TextMatch,
+            }
+         */
+        //  JE TEST TOUTES LES OPTIONS POSSIBLE 
+        //const element = screen.getByRole("treegrid", { hidden: true })
+
 const getRole = curry( (role, options) => screen.getByRole( role, options ) )
 
 
@@ -165,4 +190,4 @@ export const getTree = getRole( "tree" )
 export const getTreegrid = getRole( "treegrid" )
 
 export const getTreeitem = getRole( "treeitem" )
-screen.getByRole("")
+

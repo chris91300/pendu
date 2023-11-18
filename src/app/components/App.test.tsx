@@ -7,9 +7,7 @@ describe("TEST DU APP COMPONENT", ()=>{
 
     test("App should display without error", async ()=>{
         const user = userEvent.setup()
-        render(<App />)
-
-        //  APPLICATION START
+        render(<App />)       
 
         const h1 = screen.getByRole('heading', { level: 1, name: "LE JEU DU PENDU" })
         const label = screen.getByText("Entrez un mot à trouver pour commencer une partie")
