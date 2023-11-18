@@ -28,19 +28,18 @@ export default function useGetRandomWord(fc: (word: string)=> void): GetRandomWo
         formatWordAndsetIt(word)
     }    
    
-    const getRandomWord = () => {
+    const getRandomWord = async () => {
         startLoading()
         
         try{
             
-            getWordFromExternalApi()
+            await getWordFromExternalApi()
             stopLoading()
 
-        }catch(err){
-            
+        }catch(err){            
             try{
-                
-                getWordFromInternalApi()
+
+                await getWordFromInternalApi()
                 stopLoading()
                
             }catch(err){
