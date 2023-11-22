@@ -1,14 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import Logo from "./Logo";
 
-
-describe('TEST OF LOGO COMPONENT', () => {
-
+describe("TEST OF LOGO COMPONENT", () => {
     it("should rener the logo", () => {
-        render(<Logo />)
+        render(<Logo />);
 
-        const image = screen.getByAltText("le logo. Dessin humouristique d'un pendu")
-        expect(image).toBeInTheDocument()
-    })
-
-})
+        const image = screen.getByAltText(
+            "le logo. Dessin humouristique d'un pendu"
+        );
+        expect(image).toBeInTheDocument();
+    });
+});

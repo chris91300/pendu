@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import TryToFindTheWord from './TryToFindTheWord'
+import TryToFindTheWord from "./TryToFindTheWord";
 import alphabet from "../../../utils/alphabet";
 import {
     userCanReadTheH2,
@@ -12,75 +12,55 @@ import {
     nowUserCanSeeAnImageWithAltText,
     nowUserCanSeeAnImageWithAltAttribute,
     nowUserCanReadTheText,
-    nowUserCanNotReadTheText
-} from '../../../utils/forTesting/utils'
-
-
+    nowUserCanNotReadTheText,
+} from "../../../utils/forTesting/utils";
 
 describe("TEST OF TRYTOFINDTHEWORD COMPONENT", () => {
+    beforeEach(() => {
+        render(<TryToFindTheWord wordToFind="test" isOver={() => {}} />);
+    });
 
-    beforeEach( () => {
-        render(<TryToFindTheWord wordToFind="test" isOver={()=>{}} />)
-    } )
-    
-   
-    it( "should display the title 'ESSAIS", () => {
-
-        userCanReadTheH2("ESSAIS")
-        
-    } )
+    it("should display the title 'ESSAIS", () => {
+        userCanReadTheH2("ESSAIS");
+    });
 
     it("should display the text information with 'erreurs'", () => {
-
         // game start with 10 tries
-        userCanReadTheText("Vous avez droit à 10 erreurs")
+        userCanReadTheText("Vous avez droit à 10 erreurs");
+    });
 
-    })
-
-    it( "should display the title 'Mot a trouvé'", () => {
-
-        userCanReadTheH2("Mot a trouvé")
-        
-    } )
+    it("should display the title 'Mot a trouvé'", () => {
+        userCanReadTheH2("Mot a trouvé");
+    });
 
     it("should display 4 characters '_'", () => {
-        
-        userCanReadSeveralTexts("_").inTheNumberOf(4)
-    })
+        userCanReadSeveralTexts("_").inTheNumberOf(4);
+    });
 
     it("should display all letter of alphabet", () => {
-
-        alphabet.map( letter => {
-
-            userCanClickOnButton(letter)
-            
-        })
-    })
+        alphabet.map((letter) => {
+            userCanClickOnButton(letter);
+        });
+    });
 
     it("should display the modal error", async () => {
+        userClickOnButton("A");
 
+        nowUserCanSeeAnImageWithAltText("dessin du pendu");
 
-        userClickOnButton('A')
+        nowUserCanSeeAnImageWithAltAttribute("dessin du pendu").andWithSrc(
+            /error_10_tries_left.jpg/
+        );
 
-        nowUserCanSeeAnImageWithAltText("dessin du pendu")
+        nowUserCanReadTheText(/Désolé il n'y a pas de/);
+        nowUserCanReadTheText("A");
+        nowUserCanReadTheText(/dans le mot./);
 
-        nowUserCanSeeAnImageWithAltAttribute("dessin du pendu")
-        .andWithSrc(/error_10_tries_left.jpg/)
+        nowUserCanNotReadTheText("Attention à la prochaine erreur, couik!!!");
 
-        nowUserCanReadTheText(/Désolé il n'y a pas de/)
-        nowUserCanReadTheText("A")
-        nowUserCanReadTheText(/dans le mot./)
-        
+        userClickOnButton("T");
 
-        nowUserCanNotReadTheText("Attention à la prochaine erreur, couik!!!")
-
-      
-        userClickOnButton('T')
-
-        nowUserCanReadTheText(/Bravo. il y a 2/)
-        nowUserCanReadTheText(/T/)
-    })
-    
-
-
-})
+        nowUserCanReadTheText(/Bravo. il y a 2/);
+        nowUserCanReadTheText(/T/);
+    });
+});

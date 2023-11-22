@@ -1,13 +1,16 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 
-
-export default function useSetTimeOutToCloseModal(callback: ()=>void, time: number, watcher: string[]) {
-
-    useEffect( ()=>{
+export default function useSetTimeOutToCloseModal(
+    callback: () => void,
+    time: number,
+    watcher: string[]
+) {
+    useEffect(() => {
         let timeOut: ReturnType<typeof setTimeout>;
-        timeOut = setTimeout(callback, time); 
+        timeOut = setTimeout(callback, time);
 
-        return ()=>{ clearTimeout(timeOut);}
-        
+        return () => {
+            clearTimeout(timeOut);
+        };
     }, watcher);
-} 
+}

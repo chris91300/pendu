@@ -1,4 +1,3 @@
-
 export type ModalErrorLastTryProps = {
-    tries: number
-}
+    tries: number;
+};

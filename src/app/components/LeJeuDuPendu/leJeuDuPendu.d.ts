@@ -1,10 +1,10 @@
-import { GameOverStatus } from "./GameOver/gameOver"
+import { GameOverStatus } from "./GameOver/gameOver";
 
 interface RefObject<T> {
     readonly current: T;
 }
 
-export type StatusType = GameOverStatus
+export type StatusType = GameOverStatus;
 
 export type DataForGameTypes = [
     RefObject<HTMLDivElement>,
@@ -16,4 +16,4 @@ export type DataForGameTypes = [
     (word: string) => void,
     (status: StatusType) => void,
     () => void
-]
+];

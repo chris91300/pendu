@@ -1,5 +1,4 @@
-
 export type GameOverTextPropsType = {
-    text: string,
-    word: string
-}
+    text: string;
+    word: string;
+};

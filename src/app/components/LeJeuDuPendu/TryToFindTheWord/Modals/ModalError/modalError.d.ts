@@ -1,5 +1,4 @@
-
-export export type ModalErrorProps = {
-    letter: string,
-    tries: number
-}
+export type ModalErrorProps = {
+    letter: string;
+    tries: number;
+};

@@ -1,4 +1,3 @@
-
 export type RandomWordProps = {
-    onClick: (word: string) => void
-}
+    onClick: (word: string) => void;
+};

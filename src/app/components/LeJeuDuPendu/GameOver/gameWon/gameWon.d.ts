@@ -1,4 +1,3 @@
-
 export type GameWonPropsType = {
-    word: string
-}
+    word: string;
+};

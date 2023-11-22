@@ -1,11 +1,13 @@
-import React from 'react';
-import { ModalSuccessProps } from './modalSuccess';
+import React from "react";
+import { ModalSuccessProps } from "./modalSuccess";
 
+export default function ModalSuccess(props: ModalSuccessProps) {
+    const { letter, totalLetter } = props;
 
-
-export default function ModalSuccess({ letter, totalLetter}: ModalSuccessProps){
-
-    return <p className='text-black'>
-                Bravo. Il y a {totalLetter} <span className="font-bold">{letter}</span>
-            </p>
+    return (
+        <p className="text-black">
+            Bravo. Il y a {totalLetter}{" "}
+            <span className="font-bold">{letter}</span>
+        </p>
+    );
 }

@@ -1,4 +1,3 @@
-
 export type TitleH1Props = {
-    children: string
-}
+    children: string;
+};

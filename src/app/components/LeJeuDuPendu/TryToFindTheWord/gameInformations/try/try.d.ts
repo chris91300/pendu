@@ -1,4 +1,3 @@
-
 export type TryProps = {
-    tries: number
-}
+    tries: number;
+};

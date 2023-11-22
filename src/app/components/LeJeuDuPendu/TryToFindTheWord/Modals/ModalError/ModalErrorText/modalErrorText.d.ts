@@ -1,4 +1,3 @@
-
 export type ModalErrorTextProps = {
-    letter: string
-}
+    letter: string;
+};

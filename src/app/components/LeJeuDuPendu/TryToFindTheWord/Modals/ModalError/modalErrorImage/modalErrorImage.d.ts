@@ -1,5 +1,4 @@
-
 export type ModalErrorImageProps = {
-    src: string,
-    imageSide: number
-}
+    src: string;
+    imageSide: number;
+};

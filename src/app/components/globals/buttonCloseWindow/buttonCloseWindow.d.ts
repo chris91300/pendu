@@ -1,4 +1,3 @@
-
 export type ButtonCloseWindowPropsType = {
-    onClick: ()=>void
-  }
+    onClick: () => void;
+};

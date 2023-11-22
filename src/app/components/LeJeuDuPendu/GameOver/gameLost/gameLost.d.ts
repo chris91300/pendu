@@ -1,4 +1,3 @@
-
 export type GameLostPropsType = {
-    word: string
-}
+    word: string;
+};

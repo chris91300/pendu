@@ -1,4 +1,3 @@
-
 export type ResultProps = {
-    hiddenWord: string
-}
+    hiddenWord: string;
+};

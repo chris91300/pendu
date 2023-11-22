@@ -1,5 +1,4 @@
-
 export type GameInformationsProps = {
-    tries: number,
-    wordHidden: string
-}
+    tries: number;
+    wordHidden: string;
+};

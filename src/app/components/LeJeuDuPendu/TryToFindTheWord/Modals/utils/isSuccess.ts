@@ -1,6 +1,5 @@
+import { equals } from "ramda";
 
-import { equals } from 'ramda'
+const isSuccess = equals("success");
 
-const isSuccess = equals("success")
-
-export default isSuccess
+export default isSuccess;

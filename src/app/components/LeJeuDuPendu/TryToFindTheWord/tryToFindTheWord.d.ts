@@ -1,7 +1,6 @@
-import { GameOverStatus } from "../GameOver/gameOver"
+import { GameOverStatus } from "../GameOver/gameOver";
 
 export type TryToFindTheWordProps = {
-    wordToFind: string,
-    isOver: (text: GameOverStatus) => void
-}
-
+    wordToFind: string;
+    isOver: (text: GameOverStatus) => void;
+};
