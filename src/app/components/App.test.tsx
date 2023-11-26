@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
@@ -43,5 +43,33 @@ describe("TEST DU APP COMPONENT", () => {
 
         await user.click(input);
         expect(errorMessage).not.toBeInTheDocument();
+
+        await user.type(input, "test");
+        await user.click(buttonValider);
+
+        //  IMPOSSIBLE DE TROUVER LE MOYEN DE VÉRIFIER L'APPARITION DE LA SUITE DU JEU
+        //  TOUS LES TESTS DEVIENNENT FAUX
+
+        /*
+        const firstH2 = await screen.findByRole("heading", {
+            level: 2,
+            name: "ESSAIS",
+        });
+        expect(firstH2).toBeVisible();
+
+        const text10Tries = await screen.findByText(
+            "Vous avez droit à 10 erreurs"
+        );
+        expect(text10Tries).toBeVisible();
+
+        const secondH2 = await screen.findByRole("heading", {
+            level: 2,
+            name: "Mot à trouver",
+        });
+        expect(secondH2).toBeVisible();
+
+        const hiddenLetters = await screen.findAllByText("_");
+        expect(hiddenLetters).toHaveLength(4);
+        */
     });
 });

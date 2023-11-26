@@ -1,11 +1,5 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ModalError from "./ModalError";
-import {
-    userCanNotReadTheText,
-    userCanReadTheText,
-    userCanSeeImageWithAltText,
-    userCanSeeAnImageWithAltAttribute,
-} from "../../../../../utils/forTesting/utils";
 
 describe("TEST OF MODAL ERROR COMPONENT", () => {
     beforeEach(() => {
@@ -13,29 +7,40 @@ describe("TEST OF MODAL ERROR COMPONENT", () => {
     });
 
     it("should display an image", () => {
-        userCanSeeImageWithAltText("dessin du pendu");
+        const image = screen.getByAltText("dessin du pendu");
+        expect(image).toBeInTheDocument();
     });
 
     it("should display an image with the good src", () => {
-        userCanSeeAnImageWithAltAttribute("dessin du pendu").andWithSrc(
-            /error_5_tries_left.jpg/
-        );
+        const image = screen.getByAltText("dessin du pendu");
+        expect(image.getAttribute("src")).toMatch(/error_5_tries_left.jpg/);
     });
 
     it("should display the error text", () => {
-        userCanReadTheText(/Désolé il n'y a pas de/);
-        userCanReadTheText("A");
-        userCanReadTheText(/dans le mot./);
+        const messagePart1 = screen.getByText(/Désolé il n'y a pas de/);
+        const messageLetter = screen.getByText("A");
+        const messagePart2 = screen.getByText(/dans le mot./);
+
+        expect(messagePart1).toBeInTheDocument();
+        expect(messageLetter).toBeInTheDocument();
+        expect(messagePart2).toBeInTheDocument();
     });
 
     it("should not display the text for last change", () => {
-        userCanNotReadTheText("Attention à la prochaine erreur, couik!!!");
+        const messageNotDisplayed = screen.queryByText(
+            "Attention à la prochaine erreur, couik!!!"
+        );
+        expect(messageNotDisplayed).not.toBeInTheDocument();
     });
 });
 
-describe("TEST OF MODAL ERROR FOR LAST CHANCE", () => {
+describe("TEST OF MODAL WARNING MESSAGE FOR LAST CHANCE", () => {
     it("should display the text for last change", () => {
         render(<ModalError letter="A" tries={1} />);
-        userCanReadTheText("Attention à la prochaine erreur, couik!!!");
+
+        const warningMessage = screen.getByText(
+            "Attention à la prochaine erreur, couik!!!"
+        );
+        expect(warningMessage).toBeInTheDocument();
     });
 });

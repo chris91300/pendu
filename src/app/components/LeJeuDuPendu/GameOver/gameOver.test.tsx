@@ -1,10 +1,5 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import GameOver from "./GameOver";
-import {
-    userCanReadTheH2,
-    userCanSeeImageWithAltText,
-    userCanReadTheText,
-} from "../../../utils/forTesting/utils";
 
 describe("TEST OF GAMEOVER COMPONENT", () => {
     describe("USER WON", () => {
@@ -15,18 +10,25 @@ describe("TEST OF GAMEOVER COMPONENT", () => {
         });
 
         it("should display the title 'félicitations", () => {
-            userCanReadTheH2("félicitations");
+            const titleh2 = screen.getByRole("heading", {
+                level: 2,
+                name: "félicitations",
+            });
+            expect(titleh2).toBeInTheDocument();
         });
 
         it("should display an image", () => {
-            userCanSeeImageWithAltText(
+            const image = screen.getByAltText(
                 "image aléatoire symbolisant la victoire"
             );
+            expect(image).toBeInTheDocument();
         });
 
         it("should display the text 'Vous avez trouvé le mot voiture' ", () => {
-            userCanReadTheText("Vous avez trouvé le mot");
-            userCanReadTheText("voiture");
+            const wonMessage = screen.getByText("Vous avez trouvé le mot");
+            const wordToFind = screen.getByText("voiture");
+            expect(wonMessage).toBeInTheDocument();
+            expect(wordToFind).toBeInTheDocument();
         });
     });
 
@@ -36,18 +38,27 @@ describe("TEST OF GAMEOVER COMPONENT", () => {
         });
 
         it("should display the title 'Vous avez été pendu", () => {
-            userCanReadTheH2("Vous avez été pendu");
+            const titleh2 = screen.getByRole("heading", {
+                level: 2,
+                name: "Vous avez été pendu",
+            });
+            expect(titleh2).toBeInTheDocument();
         });
 
         it("should display an image", () => {
-            userCanSeeImageWithAltText(
+            const image = screen.getByAltText(
                 "image aléatoire symbolisant la défaite"
             );
+            expect(image).toBeInTheDocument();
         });
 
         it("should display the text 'vous avez perdu. le mot à trouver était voiture' ", () => {
-            userCanReadTheText("vous avez perdu. le mot à trouver était");
-            userCanReadTheText("voiture");
+            const lostMessage = screen.getByText(
+                "vous avez perdu. le mot à trouver était"
+            );
+            const wordToFind = screen.getByText("voiture");
+            expect(lostMessage).toBeInTheDocument();
+            expect(wordToFind).toBeInTheDocument();
         });
     });
 });

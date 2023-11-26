@@ -15,7 +15,7 @@ export default function Result(props: ResultProps) {
 
     return (
         <Container className="flex flex-col items-center grow mt-5">
-            <h2 className="text-[wheat] font-bold">Mot a trouvé</h2>
+            <h2 className="text-[wheat] font-bold">Mot à trouver</h2>
             <p className="text-[wheat]">{hiddenWordComponents}</p>
         </Container>
     );

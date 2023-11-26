@@ -1,11 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import Modal from "./Modal";
-import {
-    userCanReadTheText,
-    userCanSeeImageWithAltText,
-    userCanNotReadTheText,
-    userCanSeeAnImageWithAltAttribute,
-} from "../../../../utils/forTesting/utils";
 
 describe("TEST OF MODAL COMPONENT WITH SUCCESS STATUS", () => {
     it("should display the success text", () => {
@@ -18,8 +12,11 @@ describe("TEST OF MODAL COMPONENT WITH SUCCESS STATUS", () => {
                 hiddeModal={() => {}}
             />
         );
-        userCanReadTheText(/Bravo. Il y a 1/);
-        userCanReadTheText("V");
+        const messagePart1 = screen.getByText(/Bravo. Il y a 1/);
+        const messageLetter = screen.getByText("V");
+
+        expect(messagePart1).toBeInTheDocument();
+        expect(messageLetter).toBeInTheDocument();
     });
 });
 
@@ -37,24 +34,26 @@ describe("TEST OF MODAL COMPONENT WITH ERROR STATUS", () => {
             );
         });
 
-        it("should display an image", () => {
-            userCanSeeImageWithAltText("dessin du pendu");
-        });
-
         it("should display an image with the good src", () => {
-            userCanSeeAnImageWithAltAttribute("dessin du pendu").andWithSrc(
-                /error_7_tries_left.jpg/
-            );
+            const image = screen.getByAltText("dessin du pendu");
+            expect(image.getAttribute("src")).toMatch(/error_7_tries_left.jpg/);
         });
 
         it("should display the error text", () => {
-            userCanReadTheText(/Désolé il n'y a pas de/);
-            userCanReadTheText("A");
-            userCanReadTheText(/dans le mot./);
+            const messagePart1 = screen.getByText(/Désolé il n'y a pas de/);
+            const messageLetter = screen.getByText("A");
+            const messagePart2 = screen.getByText(/dans le mot./);
+
+            expect(messagePart1).toBeInTheDocument();
+            expect(messageLetter).toBeInTheDocument();
+            expect(messagePart2).toBeInTheDocument();
         });
 
         it("should not display the text for last change", () => {
-            userCanNotReadTheText("Attention à la prochaine erreur, couik!!!");
+            const messageNotDisplayed = screen.queryByText(
+                "Attention à la prochaine erreur, couik!!!"
+            );
+            expect(messageNotDisplayed).not.toBeInTheDocument();
         });
     });
 
@@ -69,7 +68,10 @@ describe("TEST OF MODAL COMPONENT WITH ERROR STATUS", () => {
                     hiddeModal={() => {}}
                 />
             );
-            userCanReadTheText("Attention à la prochaine erreur, couik!!!");
+            const warningMessage = screen.getByText(
+                "Attention à la prochaine erreur, couik!!!"
+            );
+            expect(warningMessage).toBeInTheDocument();
         });
     });
 });

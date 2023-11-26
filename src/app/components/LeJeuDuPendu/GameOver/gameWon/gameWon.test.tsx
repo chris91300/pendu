@@ -1,10 +1,5 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import GameWon from "./GameWon";
-import {
-    userCanReadTheH2,
-    userCanSeeImageWithAltText,
-    userCanReadTheText,
-} from "../../../../utils/forTesting/utils";
 
 describe("TEST OF GAMEWON COMPONENT", () => {
     beforeEach(() => {
@@ -12,15 +7,24 @@ describe("TEST OF GAMEWON COMPONENT", () => {
     });
 
     it("should display the title 'félicitations", () => {
-        userCanReadTheH2("félicitations");
+        const titleh2 = screen.getByRole("heading", {
+            level: 2,
+            name: "félicitations",
+        });
+        expect(titleh2).toBeInTheDocument();
     });
 
     it("should display an image", () => {
-        userCanSeeImageWithAltText("image aléatoire symbolisant la victoire");
+        const image = screen.getByAltText(
+            "image aléatoire symbolisant la victoire"
+        );
+        expect(image).toBeInTheDocument();
     });
 
     it("should display the text 'Vous avez trouvé le mot voiture' ", () => {
-        userCanReadTheText("Vous avez trouvé le mot");
-        userCanReadTheText("voiture");
+        const wonMessage = screen.getByText("Vous avez trouvé le mot");
+        const wordToFind = screen.getByText("voiture");
+        expect(wonMessage).toBeInTheDocument();
+        expect(wordToFind).toBeInTheDocument();
     });
 });

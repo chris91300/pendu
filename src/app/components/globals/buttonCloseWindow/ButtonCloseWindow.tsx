@@ -7,6 +7,7 @@ export default function ButtonCloseWindow(props: ButtonCloseWindowPropsType) {
     return (
         <Button
             extendClassName="flex justify-center items-center w-6 h-6 rounded-full absolute top-1 right-1"
+            title="fermer"
             onClick={onClick}
         >
             X
