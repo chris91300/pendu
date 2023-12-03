@@ -25,7 +25,7 @@ function Modal(props: ModalProps) {
     useSetTimeOutToCloseModal(hiddeModal, 3000, []);
 
     return (
-        <Container className={classNameModal}>
+        <Container className={classNameModal} role="dialog">
             <Container className={classNameContainer}>
                 <ButtonCloseWindow onClick={hiddeModal} />
                 {content}

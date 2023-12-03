@@ -2,9 +2,9 @@ import React, { forwardRef } from "react";
 import { ContainerPropsType, Ref } from "./container";
 
 export default function Container(props: ContainerPropsType) {
-    const { id, className, children } = props;
+    const { id, className, role, children } = props;
     return (
-        <div id={id} className={className}>
+        <div id={id} className={className} role={role}>
             {children}
         </div>
     );
