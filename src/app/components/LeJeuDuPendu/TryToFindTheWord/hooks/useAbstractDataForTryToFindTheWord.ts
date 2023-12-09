@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { includes, __, equals, update } from "ramda";
+import { includes, __ } from "ramda";
 import getUpperCaseArrayFrom from "../../../../utils/getUpperCaseArrayFrom";
 import replaceLettersByUnderscore from "../../../../utils/replaceLettersByUnderscore";
 import isItTheLastTry from "../../../../utils/isItTheLastTry";
@@ -7,6 +7,8 @@ import { GameOverStatus } from "../../GameOver/gameOver";
 import { ModalStatus } from "../Modals/modal";
 import { ReturnTypes } from "./dataForTryToFindTheWord";
 import splitAll from "../../../../utils/splitAll";
+import updateWordHiddenByLetter from "./utils/updateWordHiddenByLetter";
+import hiddenWordIsFound from "./utils/hiddenWordIsFound";
 
 function useAbstractDataForTryToFindTheWord(
     wordToFind: string,
@@ -16,7 +18,7 @@ function useAbstractDataForTryToFindTheWord(
     const word = getUpperCaseArrayFrom(wordToFind);
     const [tries, setTries] = useState(10);
     const [wordHidden, setWordHidden] = useState(wordToFindWithUnderscore);
-    const [wordHiddenSplit, setWordHiddenSplit] = useState(
+    const [wordHiddenSplitted, setwordHiddenSplitted] = useState(
         splitAll(wordHidden)
     );
     const [letter, setLetter] = useState("");
@@ -32,8 +34,8 @@ function useAbstractDataForTryToFindTheWord(
         isInWord(lettre) ? letterExist(lettre) : letterNotExist(lettre);
     }
 
-    function letterExist(lettre: string) {
-        let wordHidden = wordHiddenSplit;
+    function letterExist(letter: string) {
+        /*let wordHidden = wordHiddenSplitted;
         let totalLetterFound = 0;
 
         word.forEach((char: string, index: number) => {
@@ -41,10 +43,15 @@ function useAbstractDataForTryToFindTheWord(
                 wordHidden = update(index, lettre, wordHidden);
                 totalLetterFound++;
             }
-        });
+        });*/
+        const { wordHidden, totalLetterFound } = updateWordHiddenByLetter(
+            word,
+            wordHiddenSplitted,
+            letter
+        );
 
-        includes("_", wordHidden)
-            ? success(wordHidden, lettre, totalLetterFound)
+        hiddenWordIsFound(wordHidden)
+            ? success(wordHidden, letter, totalLetterFound)
             : playerWon();
     }
 
@@ -53,12 +60,12 @@ function useAbstractDataForTryToFindTheWord(
     }
 
     function success(
-        wordHiddenSplit: string[],
+        wordHiddenSplitted: string[],
         lettre: string,
         totalLetterFound: number
     ) {
-        const wordHidden = wordHiddenSplit.join("");
-        setWordHiddenSplit(wordHiddenSplit);
+        const wordHidden = wordHiddenSplitted.join("");
+        setwordHiddenSplitted(wordHiddenSplitted);
         setWordHidden(wordHidden);
         setModalStatus("success");
         setModalIsVisible(true);
