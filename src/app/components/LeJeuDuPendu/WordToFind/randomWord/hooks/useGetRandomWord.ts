@@ -31,11 +31,9 @@ export default function useGetRandomWord(
 
         try {
             await getWordFromExternalApi();
-            stopLoading();
         } catch (err) {
             try {
                 await getWordFromInternalApi();
-                stopLoading();
             } catch (err) {
                 setError(true);
             }

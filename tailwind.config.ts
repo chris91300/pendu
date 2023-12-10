@@ -1,24 +1,21 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-          'cimetery': "url('/images/background/cimetery_1.jpg')"
-      },
-      fontFamily: {
-        'bloody' : ["bloody"],
-        'curse_zombie' : ["curse_zombie"],
-        'satan' : ["satan"],
-        'zombie_reborn' : ["zombie_reborn"]
-      }
+    content: [
+        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    theme: {
+        extend: {
+            backgroundImage: {
+                cimetery: "url('/images/background/cimetery_1.jpg')",
+            },
+            fontFamily: {
+                bloody: ["bloody"],
+            },
+        },
     },
-  },
-  plugins: [],
-}
-export default config
+    plugins: [],
+};
+export default config;
