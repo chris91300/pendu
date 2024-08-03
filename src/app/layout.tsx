@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Header from "./components/layout/header/Header";
+import Footer from "./components/layout/footer/Footer";
 
 export const metadata: Metadata = {
     title: "Jeu du pendu",
@@ -14,10 +15,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="fr">
-            <body className="font-sans min-h-screen bg-cimetery bg-no-repeat bg-center bg-cover">
+        <html lang="fr" className="h-full">
+            <body className="flex flex-col font-sans min-h-screen h-full bg-cimetery bg-no-repeat bg-center bg-cover">
                 <Header />
                 {children}
+                <Footer />
             </body>
         </html>
     );
